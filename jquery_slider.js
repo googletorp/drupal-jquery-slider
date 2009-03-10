@@ -11,6 +11,10 @@ function livetown_format_value(ui) {
 		mill = parseInt(ui.value/1000000);
 		kilo = parseInt((ui.value - mill*1000000)/1000);
 		if (kilo < 10) {
+			kilo = '00';
+		}
+		else if (kilo <100) {
+			kilo = parseInt(kilo/10);
 			kilo = '0' + kilo;
 		}
 		else if (kilo > 99) {
